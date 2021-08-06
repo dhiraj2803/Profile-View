@@ -19,11 +19,13 @@ class videoCard extends StatelessWidget {
                                 ? StaggeredTile.count(2, 2)
                                 : index == 6
                                     ? StaggeredTile.count(1, 2)
-                                    : StaggeredTile.count(2, 2),
+                                    : index == 7
+                                        ? StaggeredTile.count(2, 2)
+                                        : StaggeredTile.count(3, 4),
         mainAxisSpacing: 6,
         crossAxisSpacing: 10,
         crossAxisCount: 5,
-        itemCount: 8,
+        itemCount: 9,
         shrinkWrap: true,
         primary: false,
         itemBuilder: (context, index) => TileCard(index: index),
@@ -35,12 +37,43 @@ class TileCard extends StatelessWidget {
   int index;
   @override
   Widget build(BuildContext context) {
+    String url = '';
+    if (index == 0) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128574414-480aa251-4ac0-431e-9601-661fd7f96f6f.JPG';
+    } else if (index == 1) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128574422-4ceec8b8-9224-42a8-867d-5a31f36ea9b4.JPG';
+    } else if (index == 2) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128574428-9b6b4fab-ec15-4ba0-912d-1a65b4afe531.JPG';
+    } else if (index == 3) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128574438-ed12b239-e5cb-4ef3-b38c-cba1a67ebc48.JPG';
+    } else if (index == 4) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128574444-7b1441ee-a3bf-4686-9879-8af477be1941.JPG';
+    } else if (index == 5) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128574447-129a8283-a15f-432b-8fb2-dc95107fc2b2.JPG';
+    } else if (index == 6) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128574450-1765ce7d-8787-4b46-ac8c-899811417be1.JPG';
+    } else if (index == 7) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128574454-8e6152fb-8186-403c-abf1-78cbdd13a4bb.JPG';
+    } else if (index == 8) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128574459-276d8fc4-87ba-456e-ad67-eb04ae558a98.JPG';
+    }
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => VideoScreen(),
+            builder: (context) => VideoScreen(
+              index: index,
+            ),
           ),
         );
       },
@@ -52,9 +85,7 @@ class TileCard extends StatelessWidget {
         child: Container(
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.network(
-                'https://source.unsplash.com/random?sig=$index',
-                fit: BoxFit.cover),
+            child: Image.network(url, fit: BoxFit.cover),
           ),
         ),
       ),
