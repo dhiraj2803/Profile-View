@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "10",
+                                "9",
                                 style: TextStyle(
                                     fontSize: 18, color: Colors.black54),
                               ),

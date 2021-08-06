@@ -69,15 +69,57 @@ class VideoScreen extends StatelessWidget {
         ),
       ),
       body: Container(
-        height: 300,
         decoration: BoxDecoration(
-          // border: Border.all(
-          //     color: Colors.redAccent, width: 2.0, style: BorderStyle.solid),
           borderRadius: BorderRadius.circular(18.0),
         ),
-        child: playVideo(
-          videoPlayerController: VideoPlayerController.network(url),
-          looping: true,
+        child: ListView(
+          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+          children: [
+            Divider(),
+            Container(
+              padding: EdgeInsets.fromLTRB(7, 0, 10, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        width: 45.0,
+                        height: 45.0,
+                        decoration: new BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                                color: Colors.redAccent,
+                                width: 1.0,
+                                style: BorderStyle.solid),
+                            image: new DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage('images/profile_pic.jpeg'))),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Dhiraj Gupta',
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
+                  ),
+                  Icon(
+                    Icons.more_vert_rounded,
+                    color: Colors.redAccent,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              height: 300,
+              child: playVideo(
+                videoPlayerController: VideoPlayerController.network(url),
+                looping: true,
+              ),
+            ),
+          ],
         ),
       ),
     );
