@@ -113,9 +113,11 @@ class VideoScreen extends StatelessWidget {
               ),
             ),
             Container(
-              height: 300,
+              height: 400,
               child: playVideo(
-                videoPlayerController: VideoPlayerController.network(url),
+                videoPlayerController: VideoPlayerController.network(
+                  url,
+                ),
                 looping: true,
               ),
             ),
