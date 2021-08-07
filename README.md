@@ -1,16 +1,11 @@
 # fashion_preview
 
-A new Flutter project.
+<h3>Data recieved from the user is stored at MongoDb database</h3>
+<h3>If user delete the notes form the mobile the notes will also get deleted from the server </h3>
 
-## Getting Started
+<h2>packages used</h2>
+<ul><h3>flutter_staggered_grid_view</h3></ul>
+<ul><h3>video_player</h3></ul>
 
-This project is a starting point for a Flutter application.
+<a herf="https://pub.dev/packages/chewie" ><ul><h3>chewie</h3></ul></a>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
