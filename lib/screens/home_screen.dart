@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:fashion_preview/widget/gridView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool followTap = false;
+  bool messageTap = false;
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -90,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "9",
+                                "10",
                                 style: TextStyle(
                                     fontSize: 18, color: Colors.black54),
                               ),
@@ -148,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(
-                height: 7,
+                height: 3,
               ),
               Container(
                 padding: EdgeInsets.fromLTRB(7, 0, 0, 0),
@@ -175,48 +176,47 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                        width: width / 2.5,
-                        height: 35,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Follow",
-                                style: TextStyle(
-                                    fontSize: 20.0, color: Colors.white)),
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.redAccent,
-                          borderRadius: BorderRadius.circular(10.0),
-                        )),
-                    Container(
-                        width: width / 2.5,
-                        height: 35,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Message",
-                                style: TextStyle(
-                                    fontSize: 20.0, color: Colors.white)),
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.redAccent,
-                          borderRadius: BorderRadius.circular(10.0),
-                        )),
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                          width: width / 2.5,
+                          height: 35,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Follow",
+                                  style: TextStyle(
+                                      fontSize: 20.0, color: Colors.white)),
+                            ],
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                            borderRadius: BorderRadius.circular(10.0),
+                          )),
+                      Container(
+                          width: width / 2.5,
+                          height: 35,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Message",
+                                  style: TextStyle(
+                                      fontSize: 20.0, color: Colors.white)),
+                            ],
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                            borderRadius: BorderRadius.circular(10.0),
+                          )),
+                    ],
+                  )),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Container(
                 child: videoCard(),
@@ -226,7 +226,5 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-
-    //Widget videoCard(int index) => card()
   }
 }

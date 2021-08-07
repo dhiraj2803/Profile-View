@@ -35,6 +35,9 @@ class VideoScreen extends StatelessWidget {
     } else if (index == 8) {
       url =
           'https://user-images.githubusercontent.com/47321390/128574722-9c817136-a2d6-49a3-9072-51a7f2d6b8ad.mp4';
+    } else if (index == 9) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128593791-7a693dd6-f277-4f12-8a28-83a378608173.mp4';
     }
     return Scaffold(
       appBar: AppBar(
@@ -111,6 +114,9 @@ class VideoScreen extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+            SizedBox(
+              height: 7,
             ),
             Container(
               height: 400,

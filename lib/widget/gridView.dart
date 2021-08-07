@@ -21,11 +21,13 @@ class videoCard extends StatelessWidget {
                                     ? StaggeredTile.count(1, 2)
                                     : index == 7
                                         ? StaggeredTile.count(2, 2)
-                                        : StaggeredTile.count(3, 4),
+                                        : index == 8
+                                            ? StaggeredTile.count(3, 4)
+                                            : StaggeredTile.count(2, 3),
         mainAxisSpacing: 6,
         crossAxisSpacing: 10,
         crossAxisCount: 5,
-        itemCount: 9,
+        itemCount: 10,
         shrinkWrap: true,
         primary: false,
         itemBuilder: (context, index) => TileCard(index: index),
@@ -65,6 +67,9 @@ class TileCard extends StatelessWidget {
     } else if (index == 8) {
       url =
           'https://user-images.githubusercontent.com/47321390/128574459-276d8fc4-87ba-456e-ad67-eb04ae558a98.JPG';
+    } else if (index == 9) {
+      url =
+          'https://user-images.githubusercontent.com/47321390/128593806-20fb1eb4-bf3a-4736-a6b0-842b430e18f1.JPG';
     }
     return GestureDetector(
       onTap: () {
